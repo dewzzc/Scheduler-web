@@ -1273,11 +1273,17 @@ function saveHours(day) {
     updateHoursRing(day); renderHoursChart();
 }
 function updateHoursRing(day) {
-    const tMins=(parseInt(document.getElementById(`htarget-${day}-h`)?.value)||0)*60+(parseInt(document.getElementById(`htarget-${day}-m`)?.value)||0);
-    const aMins=(parseInt(document.getElementById(`hactual-${day}-h`)?.value)||0)*60+(parseInt(document.getElementById(`hactual-${day}-m`)?.value)||0);
-    const pct=tMins>0?Math.min(100,Math.round((aMins/tMins)*100)):0;
-    const el=document.getElementById(`hsvg-${day}`);
-    const tx=document.getElementById(`hp-${day}`);
+    const hd = getHoursData(day);
+    const thEl = document.getElementById(`htarget-${day}-h`);
+    const tmEl = document.getElementById(`htarget-${day}-m`);
+    const ahEl = document.getElementById(`hactual-${day}-h`);
+    const amEl = document.getElementById(`hactual-${day}-m`);
+    // Read from DOM if available, fall back to localStorage
+    const tMins = (parseInt(thEl?.value ?? hd.targetH)||0)*60 + (parseInt(tmEl?.value ?? hd.targetM)||0);
+    const aMins = (parseInt(ahEl?.value ?? hd.actualH)||0)*60 + (parseInt(amEl?.value ?? hd.actualM)||0);
+    const pct = tMins>0 ? Math.min(100, Math.round((aMins/tMins)*100)) : 0;
+    const el = document.getElementById(`hsvg-${day}`);
+    const tx = document.getElementById(`hp-${day}`);
     if (el) { el.style.strokeDashoffset=87.96-(pct/100)*87.96; el.style.stroke=(aMins>=tMins&&tMins>0)?'#14b8a6':'#06b6d4'; }
     const aH=Math.floor(aMins/60), aM=aMins%60;
     if (tx) tx.innerText=aMins>0?`${aH}h${aM>0?aM+'m':''}`:'0h';
@@ -1520,7 +1526,19 @@ const _savedTheme = localStorage.getItem('theme');
     const _todayMap = ['sun','mon','tue','wed','thu','fri','sat'];
     const _todayKey = _todayMap[new Date().getDay()];
 
-    DAYS.forEach(d=>{renderDayTasks(d);calcProgress(d);updateHoursRing(d);});
+DAYS.forEach(d=>{
+        // Reload saved hours into input fields before rendering rings
+        const _hd = getHoursData(d);
+        const _thEl = document.getElementById(`htarget-${d}-h`);
+        const _tmEl = document.getElementById(`htarget-${d}-m`);
+        const _ahEl = document.getElementById(`hactual-${d}-h`);
+        const _amEl = document.getElementById(`hactual-${d}-m`);
+        if (_thEl && _hd.targetH !== '') _thEl.value = _hd.targetH;
+        if (_tmEl && _hd.targetM !== '') _tmEl.value = _hd.targetM;
+        if (_ahEl && _hd.actualH !== '') _ahEl.value = _hd.actualH;
+        if (_amEl && _hd.actualM !== '') _amEl.value = _hd.actualM;
+        renderDayTasks(d); calcProgress(d); updateHoursRing(d);
+    });
     renderHoursChart();
     renderTodaySummary();
 
