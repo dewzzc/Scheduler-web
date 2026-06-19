@@ -1262,36 +1262,39 @@ function loadGoals(type) {
 
 // HOURS ENGINE
 function getHoursData(day) {
-    return JSON.parse(localStorage.getItem(`hours-${day}`))||{target:'',actual:''};
+    return JSON.parse(localStorage.getItem(`hours-${day}`))||{targetH:'',targetM:'',actualH:'',actualM:''};
 }
-
 function saveHours(day) {
-    const target=parseFloat(document.getElementById(`htarget-${day}`).value)||0;
-    const actual=parseFloat(document.getElementById(`hactual-${day}`).value)||0;
-    localStorage.setItem(`hours-${day}`,JSON.stringify({target,actual}));
+    const targetH=parseInt(document.getElementById(`htarget-${day}-h`)?.value)||0;
+    const targetM=parseInt(document.getElementById(`htarget-${day}-m`)?.value)||0;
+    const actualH=parseInt(document.getElementById(`hactual-${day}-h`)?.value)||0;
+    const actualM=parseInt(document.getElementById(`hactual-${day}-m`)?.value)||0;
+    localStorage.setItem(`hours-${day}`,JSON.stringify({targetH,targetM,actualH,actualM}));
     updateHoursRing(day); renderHoursChart();
 }
-
 function updateHoursRing(day) {
-    const t=parseFloat(document.getElementById(`htarget-${day}`)?.value)||0;
-    const a=parseFloat(document.getElementById(`hactual-${day}`)?.value)||0;
-    const pct=t>0?Math.min(100,Math.round((a/t)*100)):0;
+    const tMins=(parseInt(document.getElementById(`htarget-${day}-h`)?.value)||0)*60+(parseInt(document.getElementById(`htarget-${day}-m`)?.value)||0);
+    const aMins=(parseInt(document.getElementById(`hactual-${day}-h`)?.value)||0)*60+(parseInt(document.getElementById(`hactual-${day}-m`)?.value)||0);
+    const pct=tMins>0?Math.min(100,Math.round((aMins/tMins)*100)):0;
     const el=document.getElementById(`hsvg-${day}`);
     const tx=document.getElementById(`hp-${day}`);
-    if (el) { el.style.strokeDashoffset=87.96-(pct/100)*87.96; el.style.stroke=(a>=t&&t>0)?'#14b8a6':'#06b6d4'; }
-    if (tx) tx.innerText=a>0?`${a}h`:'0h';
+    if (el) { el.style.strokeDashoffset=87.96-(pct/100)*87.96; el.style.stroke=(aMins>=tMins&&tMins>0)?'#14b8a6':'#06b6d4'; }
+    const aH=Math.floor(aMins/60), aM=aMins%60;
+    if (tx) tx.innerText=aMins>0?`${aH}h${aM>0?aM+'m':''}`:'0h';
 }
 
 function renderHoursChart() {
     const container=document.getElementById('hoursChart'); container.innerHTML='';
-    const maxH=Math.max(...DAYS.map(d=>{const hd=getHoursData(d);return Math.max(parseFloat(hd.target)||0,parseFloat(hd.actual)||0);}),1);
+    const toMins=d=>{const hd=getHoursData(d);return Math.max((hd.targetH||0)*60+(hd.targetM||0),(hd.actualH||0)*60+(hd.actualM||0));};
+    const maxMins=Math.max(...DAYS.map(toMins),1);
     DAYS.forEach(day=>{
         const hd=getHoursData(day);
-        const target=parseFloat(hd.target)||0, actual=parseFloat(hd.actual)||0;
-        const CH=100, tH=target>0?Math.round((target/maxH)*CH):0, aH=actual>0?Math.round((actual/maxH)*CH):0;
-        const isOver=actual>=target&&target>0;
+        const tMins=(hd.targetH||0)*60+(hd.targetM||0), aMins=(hd.actualH||0)*60+(hd.actualM||0);
+        const CH=100, tH=tMins>0?Math.round((tMins/maxMins)*CH):0, aH=aMins>0?Math.round((aMins/maxMins)*CH):0;
+        const isOver=aMins>=tMins&&tMins>0;
+        const aLabel=aMins>0?`${Math.floor(aMins/60)}h${aMins%60>0?(aMins%60)+'m':''}` :'';
         const g=document.createElement('div'); g.className='hours-bar-group';
-        g.innerHTML=`<div class="hours-bar-val">${actual>0?actual+'h':''}</div><div class="hours-bars"><div class="bar bar-target" style="height:${tH}px" title="Target:${target}h"></div><div class="bar bar-actual${isOver?' over':''}" style="height:${aH}px" title="Worked:${actual}h"></div></div><div class="hours-bar-label">${DAY_NAMES[day].slice(0,3)}</div>`;
+        g.innerHTML=`<div class="hours-bar-val">${aLabel}</div><div class="hours-bars"><div class="bar bar-target" style="height:${tH}px" title="Target:${tMins}m"></div><div class="bar bar-actual${isOver?' over':''}" style="height:${aH}px" title="Worked:${aMins}m"></div></div><div class="hours-bar-label">${DAY_NAMES[day].slice(0,3)}</div>`;
         container.appendChild(g);
     });
 }
