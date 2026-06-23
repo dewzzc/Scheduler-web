@@ -23,64 +23,68 @@
             --max-w: 1400px;
             --page-pad: 24px;
         }
-body.light {
-    --bg-dark: #f0f4f8; --card-dark: #ffffff; --text-light: #1a202c; --text-muted: #64748b;
-}
-body.light .big-clock-container, body.light .custom-timer-panel, body.light .panel-card,
-body.light .deadline-banner, body.light .today-summary, body.light .hours-chart-wrapper,
-body.light .audio-module-wrapper, body.light .day-column, body.light .edit-modal,
-body.light .deadline-modal { background: #ffffff; border-color: #e2e8f0; }
-body.light .form-group input, body.light .form-group select, body.light .goal-input-box input,
-body.light .hours-input, body.light .music-search-bar, body.light .edit-modal input,
-body.light .deadline-modal input { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
-body.light .task-item, body.light .goal-item, body.light .studio-track-row,
-body.light .today-task-card, body.light .deadline-unit, body.light .today-stat,
-body.light .hours-block, body.light .playback-engine-deck { background: #f1f5f9; border-color: #e2e8f0; }
-body.light .player-control-strip { background: #e8edf5; }
-body.light .big-analog-clock { background: radial-gradient(circle,#e2e8f0 0%,#f1f5f9 100%); border-color: #cbd5e1; }
-body.light .big-analog-clock::after { background: #1a202c; }
-body.light .b-hour { background: #1a202c; }
-body.light .bar-target { background: #e2e8f0; border-color: #cbd5e1; }
-body.light .progress-circle-box .circle-bg { stroke: #e2e8f0; }
-body.light .nav-btn, body.light .music-upload-btn-label, body.light .deadline-edit-btn,
-body.light .timer-btn-reset, body.light .ai-chip { background: #f1f5f9; border-color: #cbd5e1; color: #64748b; }
-body.light .action-btn { color: #94a3b8; }
-body.light .action-btn:hover { background: #e2e8f0; color: #1a202c; }
-body.light .task-title, body.light .row-title, body.light .track-title,
-body.light .ttc-name, body.light .deadline-target-name { color: #1a202c; }
-body.light .header-text h1 { background: linear-gradient(to right,#1a202c,#475569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-body.light .big-time { color: #1a202c; }
-body.light .big-time span { color: #1a202c !important; }
-body.light .studio-track-row:hover { background: #e8edf5; }
-body.light .scrub-rail, body.light .volume-slider-range { background: #cbd5e1; }
-body.light .hours-divider { background: #e2e8f0; }
-body.light .today-summary { border-color: rgba(6,182,212,0.2); box-shadow: none; }
-body.light .day-column.today { background: linear-gradient(160deg,#e8f7fb 0%,#ffffff 100%); border-color: rgba(6,182,212,0.4); }
-body.light .today-progress-bar-wrap { background: #e2e8f0; border-color: #e2e8f0; }
-body.light .big-clock-container { box-shadow: none; }
-body.light .btn-cancel { background: #f1f5f9; color: #64748b; }
-body.light .cal-day { background: #f8fafc; border-color: #e2e8f0; color: #1a202c; }
-body.light .cal-day.has-tasks { background: #eff6ff; }
-body.light .cal-day.today-cal { border-color: var(--col-thu); }
-body.light .cal-header-cell { color: #64748b; }
-body.light .calendar-wrapper { background: #ffffff; border-color: #e2e8f0; }
-body.light .cal-task-dot { background: #94a3b8; }
-body.light .cal-year-input { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
-body.light .dca-btn-group { background: #f1f5f9 !important; border-color: #cbd5e1 !important; }
-body.light .dca-btn-divider { background: #cbd5e1 !important; }
-body.light .dca-btn { color: #94a3b8 !important; }
-body.light .dca-btn:hover { color: #1a202c !important; background: #e2e8f0 !important; }
+        body.light {
+            --bg-dark: #f0f4f8; --card-dark: #ffffff; --text-light: #1a202c; --text-muted: #64748b;
+        }
+        body.light .big-clock-container, body.light .custom-timer-panel, body.light .panel-card,
+        body.light .deadline-banner, body.light .today-summary, body.light .hours-chart-wrapper,
+        body.light .audio-module-wrapper, body.light .day-column, body.light .edit-modal,
+        body.light .deadline-modal, body.light .copy-modal { background: #ffffff; border-color: #e2e8f0; }
+        body.light .form-group input, body.light .form-group select, body.light .goal-input-box input,
+        body.light .hours-input, body.light .music-search-bar, body.light .edit-modal input,
+        body.light .deadline-modal input, body.light .copy-modal select { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
+        body.light .task-item, body.light .goal-item, body.light .studio-track-row,
+        body.light .today-task-card, body.light .deadline-unit, body.light .today-stat,
+        body.light .hours-block, body.light .playback-engine-deck { background: #f1f5f9; border-color: #e2e8f0; }
+        body.light .player-control-strip { background: #e8edf5; }
+        body.light .big-analog-clock { background: radial-gradient(circle,#e2e8f0 0%,#f1f5f9 100%); border-color: #cbd5e1; }
+        body.light .big-analog-clock::after { background: #1a202c; }
+        body.light .b-hour { background: #1a202c; }
+        body.light .bar-target { background: #e2e8f0; border-color: #cbd5e1; }
+        body.light .progress-circle-box .circle-bg { stroke: #e2e8f0; }
+        body.light .nav-btn, body.light .music-upload-btn-label, body.light .deadline-edit-btn,
+        body.light .timer-btn-reset, body.light .ai-chip { background: #f1f5f9; border-color: #cbd5e1; color: #64748b; }
+        body.light .action-btn { color: #94a3b8; }
+        body.light .action-btn:hover { background: #e2e8f0; color: #1a202c; }
+        body.light .task-title, body.light .row-title, body.light .track-title,
+        body.light .ttc-name, body.light .deadline-target-name { color: #1a202c; }
+        body.light .header-text h1 { background: linear-gradient(to right,#1a202c,#475569); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        body.light .big-time { color: #1a202c; }
+        body.light .big-time span { color: #1a202c !important; }
+        body.light .studio-track-row:hover { background: #e8edf5; }
+        body.light .scrub-rail, body.light .volume-slider-range { background: #cbd5e1; }
+        body.light .hours-divider { background: #e2e8f0; }
+        body.light .today-summary { border-color: rgba(6,182,212,0.2); box-shadow: none; }
+        body.light .day-column.today { background: linear-gradient(160deg,#e8f7fb 0%,#ffffff 100%); border-color: rgba(6,182,212,0.4); }
+        body.light .today-progress-bar-wrap { background: #e2e8f0; border-color: #e2e8f0; }
+        body.light .big-clock-container { box-shadow: none; }
+        body.light .btn-cancel { background: #f1f5f9; color: #64748b; }
+        body.light .cal-day { background: #f8fafc; border-color: #e2e8f0; color: #1a202c; }
+        body.light .cal-day.has-tasks { background: #eff6ff; }
+        body.light .cal-day.today-cal { border-color: var(--col-thu); }
+        body.light .cal-header-cell { color: #64748b; }
+        body.light .calendar-wrapper { background: #ffffff; border-color: #e2e8f0; }
+        body.light .cal-task-dot { background: #94a3b8; }
+        body.light .cal-year-input { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
+        body.light .dca-btn-group { background: #f1f5f9 !important; border-color: #cbd5e1 !important; }
+        body.light .dca-btn-divider { background: #cbd5e1 !important; }
+        body.light .dca-btn { color: #94a3b8 !important; }
+        body.light .dca-btn:hover { color: #1a202c !important; background: #e2e8f0 !important; }
+        body.light .day-viewer-modal { background: #ffffff; border-color: #e2e8f0; }
+        body.light .dv-task-row, body.light .day-viewer-stat { background: #f1f5f9; border-color: #e2e8f0; }
+        body.light .dv-name { color: #1a202c; }
+        body.light .cal-clipboard-bar { background: rgba(168,85,247,0.06); }
 
-.theme-toggle {
-    background: var(--card-dark); border: 1px solid #2c314d; border-radius: 50px;
-    padding: 8px 18px; cursor: pointer; display: flex; align-items: center; gap: 8px;
-    font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;
-    text-transform: uppercase; transition: background 0.2s, color 0.2s, border-color 0.2s;
-    user-select: none; align-self: flex-end;
-}
-.theme-toggle:hover { color: var(--text-light); border-color: var(--col-thu); }
-body.light .theme-toggle { background: #ffffff; border-color: #cbd5e1; color: #64748b; }
-body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
+        .theme-toggle {
+            background: var(--card-dark); border: 1px solid #2c314d; border-radius: 50px;
+            padding: 8px 18px; cursor: pointer; display: flex; align-items: center; gap: 8px;
+            font-size: 0.75rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.5px;
+            text-transform: uppercase; transition: background 0.2s, color 0.2s, border-color 0.2s;
+            user-select: none; align-self: flex-end;
+        }
+        .theme-toggle:hover { color: var(--text-light); border-color: var(--col-thu); }
+        body.light .theme-toggle { background: #ffffff; border-color: #cbd5e1; color: #64748b; }
+        body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
 
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
         body { background-color: var(--bg-dark); color: var(--text-light); min-height: 100vh; padding: var(--page-pad); zoom: 0.82; }
@@ -106,7 +110,7 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .big-date { font-size: 0.82rem; color: var(--text-muted); margin-top: 5px; letter-spacing: 1px; text-transform: uppercase; }
 
         .custom-timer-panel { background: var(--card-dark); border: 1px solid #1e2235; padding: 18px 22px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; gap: 12px; justify-self: end; width: 100%; }
-        .timer-numeric-display { font-size: 2.5rem; font-weight: 700; font-family: monospace; color: var(--col-thu); text-shadow: none; letter-spacing: 2px; transition: color 0.3s; }
+        .timer-numeric-display { font-size: 2.5rem; font-weight: 700; font-family: monospace; color: var(--col-thu); letter-spacing: 2px; transition: color 0.3s; }
         .timer-numeric-display.beeping { color: var(--col-priority); }
         .timer-custom-inputs { display: flex; gap: 4px; align-items: center; }
         .timer-custom-inputs input { width: 42px; background: #0f111a; border: 1px solid #2c314d; border-radius: 6px; color: white; padding: 4px; text-align: center; font-size: 0.8rem; }
@@ -115,7 +119,7 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .timer-action-row { display: flex; gap: 10px; width: 100%; }
         .timer-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 0; border: none; border-radius: 10px; font-size: 0.88rem; font-weight: 700; cursor: pointer; letter-spacing: 0.5px; transition: transform 0.1s; user-select: none; }
         .timer-btn:active { transform: scale(0.96); }
-        .timer-btn-start { background: linear-gradient(135deg,#06b6d4,#0284a8); color: #000; box-shadow: none; }
+        .timer-btn-start { background: linear-gradient(135deg,#06b6d4,#0284a8); color: #000; }
         .timer-btn-start.is-paused { background: linear-gradient(135deg,#a855f7,#7c3aed); color: #fff; }
         .timer-btn-reset { background: #1e2235; color: var(--text-muted); border: 1px solid #2c314d; flex: 0 0 auto; padding: 10px 16px; }
         .timer-btn-reset:hover { background: #252a3d; color: #fff; }
@@ -127,11 +131,11 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .deadline-date-sub { font-size: 0.72rem; color: var(--text-muted); margin-top: 1px; }
         .deadline-units { display: flex; gap: 10px; flex: 1; justify-content: center; flex-wrap: wrap; }
         .deadline-unit { display: flex; flex-direction: column; align-items: center; background: #0d0f1a; border: 1px solid #1e2235; border-radius: 12px; padding: 10px 18px; min-width: 72px; }
-        .deadline-unit-num { font-size: 2rem; font-weight: 800; font-family: monospace; line-height: 1; color: var(--col-thu); text-shadow: none; }
-        .deadline-unit-num.urgent { color: var(--col-priority); text-shadow: none; }
+        .deadline-unit-num { font-size: 2rem; font-weight: 800; font-family: monospace; line-height: 1; color: var(--col-thu); }
+        .deadline-unit-num.urgent { color: var(--col-priority); }
         .deadline-unit-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-top: 4px; }
         .deadline-actions { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; }
-        .deadline-edit-btn { background: #1e2235; border: 1px solid #2c314d; color: var(--text-muted); padding: 7px 16px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; letter-spacing: 0.3px; transition: background 0.15s, color 0.15s; }
+        .deadline-edit-btn { background: #1e2235; border: 1px solid #2c314d; color: var(--text-muted); padding: 7px 16px; border-radius: 8px; font-size: 0.78rem; font-weight: 600; cursor: pointer; transition: background 0.15s, color 0.15s; }
         .deadline-edit-btn:hover { background: #252a3d; color: #fff; }
 
         .deadline-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 1000; align-items: center; justify-content: center; padding: 16px; }
@@ -178,16 +182,12 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .day-header { display: flex; flex-direction: column; gap: 6px; margin-bottom: 9px; }
         .day-header-name { font-size: 0.88rem; font-weight: 700; color: #fff; letter-spacing: 0.3px; }
         .today-badge { display: none; font-size: 0.58rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: #000; background: var(--col-thu); padding: 1px 5px; border-radius: 20px; margin-left: 5px; vertical-align: middle; }
-
         .day-col-actions { display: flex; align-items: center; gap: 6px; flex-wrap: nowrap; }
         .dca-btn-group { display: flex; align-items: center; background: #15182a; border: 1px solid #252a3d; border-radius: 7px; overflow: hidden; flex-shrink: 0; }
         .dca-btn { background: transparent; border: none; color: #6b7280; cursor: pointer; font-size: 0.66rem; padding: 4px 9px; line-height: 1.6; font-weight: 700; letter-spacing: 0.3px; transition: color 0.15s, background 0.15s; white-space: nowrap; }
         .dca-btn-divider { width: 1px; height: 14px; background: #252a3d; flex-shrink: 0; align-self: center; }
-        .dca-btn.view { color: #6b7280; }
         .dca-btn.view:hover { background: rgba(255,255,255,0.05); color: #9ca3af; }
-        .dca-btn.clr { color: #6b7280; }
         .dca-btn.clr:hover { background: rgba(239,68,68,0.08); color: #ef4444; }
-
         .rings-box { display: flex; gap: 2px; margin-left: auto; }
         .progress-circle-box { position: relative; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
         .progress-circle-box svg { transform: rotate(-90deg); width: 32px; height: 32px; }
@@ -223,32 +223,32 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .action-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.78rem; padding: 2px 3px; border-radius: 3px; }
         .action-btn:hover { color: white; background: #1e2235; }
 
-.today-summary { background: var(--card-dark); border: 1px solid rgba(6,182,212,0.2); border-radius: 16px; padding: 18px 22px; box-shadow: none; }
-.today-summary-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
-.today-summary-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--col-thu); font-weight: 700; }
-.today-summary-date { font-size: 0.78rem; color: var(--text-muted); }
-.today-summary-stats { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
-.today-stat { background: #0d0f1a; border: 1px solid #1e2235; border-radius: 8px; padding: 5px 14px; font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
-.today-stat span { font-size: 1rem; font-weight: 800; font-family: monospace; color: #fff; }
-.today-stat span.done { color: var(--col-fri); }
-.today-stat span.left { color: var(--col-thu); }
-.today-stat span.priority-count { color: var(--col-priority); }
-.today-tasks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
-.today-task-card { background: #0d0f1a; border: 1px solid #1a1d2e; border-left: 3px solid var(--col-thu); border-radius: 8px; padding: 9px 12px; display: flex; align-items: flex-start; gap: 10px; min-width: 0; transition: border-color 0.2s, opacity 0.2s; cursor: pointer; }
-.today-task-card.is-priority { border-left-color: var(--col-priority); }
-.today-task-card.completed { opacity: 0.35; }
-.today-task-card.completed .ttc-name { text-decoration: line-through; }
-.today-task-card:hover { border-color: rgba(6,182,212,0.4); }
-.ttc-check { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #2c314d; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
-.today-task-card.completed .ttc-check { background: var(--col-fri); border-color: var(--col-fri); }
-.ttc-check-inner { width: 6px; height: 6px; border-radius: 50%; background: #fff; display: none; }
-.today-task-card.completed .ttc-check-inner { display: block; }
-.ttc-info { flex: 1; min-width: 0; }
-.ttc-name { font-size: 0.82rem; font-weight: 500; white-space: normal; word-break: break-word; color: #fff; line-height: 1.4; }
-.ttc-time { font-size: 0.7rem; color: var(--col-thu); margin-top: 3px; font-weight: 600; }
-.today-empty { font-size: 0.82rem; color: var(--text-muted); padding: 10px 0; text-align: center; letter-spacing: 0.3px; }
-.today-progress-bar-wrap { margin-top: 14px; background: #0d0f1a; border-radius: 6px; height: 6px; overflow: hidden; border: 1px solid #1a1d2e; }
-.today-progress-bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(to right, var(--col-thu), var(--col-fri)); transition: width 0.4s ease; width: 0%; }
+        .today-summary { background: var(--card-dark); border: 1px solid rgba(6,182,212,0.2); border-radius: 16px; padding: 18px 22px; }
+        .today-summary-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px; }
+        .today-summary-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--col-thu); font-weight: 700; }
+        .today-summary-date { font-size: 0.78rem; color: var(--text-muted); }
+        .today-summary-stats { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+        .today-stat { background: #0d0f1a; border: 1px solid #1e2235; border-radius: 8px; padding: 5px 14px; font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 6px; }
+        .today-stat span { font-size: 1rem; font-weight: 800; font-family: monospace; color: #fff; }
+        .today-stat span.done { color: var(--col-fri); }
+        .today-stat span.left { color: var(--col-thu); }
+        .today-stat span.priority-count { color: var(--col-priority); }
+        .today-tasks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 8px; }
+        .today-task-card { background: #0d0f1a; border: 1px solid #1a1d2e; border-left: 3px solid var(--col-thu); border-radius: 8px; padding: 9px 12px; display: flex; align-items: flex-start; gap: 10px; min-width: 0; transition: border-color 0.2s, opacity 0.2s; cursor: pointer; }
+        .today-task-card.is-priority { border-left-color: var(--col-priority); }
+        .today-task-card.completed { opacity: 0.35; }
+        .today-task-card.completed .ttc-name { text-decoration: line-through; }
+        .today-task-card:hover { border-color: rgba(6,182,212,0.4); }
+        .ttc-check { width: 16px; height: 16px; border-radius: 50%; border: 2px solid #2c314d; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; }
+        .today-task-card.completed .ttc-check { background: var(--col-fri); border-color: var(--col-fri); }
+        .ttc-check-inner { width: 6px; height: 6px; border-radius: 50%; background: #fff; display: none; }
+        .today-task-card.completed .ttc-check-inner { display: block; }
+        .ttc-info { flex: 1; min-width: 0; }
+        .ttc-name { font-size: 0.82rem; font-weight: 500; white-space: normal; word-break: break-word; color: #fff; line-height: 1.4; }
+        .ttc-time { font-size: 0.7rem; color: var(--col-thu); margin-top: 3px; font-weight: 600; }
+        .today-empty { font-size: 0.82rem; color: var(--text-muted); padding: 10px 0; text-align: center; }
+        .today-progress-bar-wrap { margin-top: 14px; background: #0d0f1a; border-radius: 6px; height: 6px; overflow: hidden; border: 1px solid #1a1d2e; }
+        .today-progress-bar-fill { height: 100%; border-radius: 6px; background: linear-gradient(to right, var(--col-thu), var(--col-fri)); transition: width 0.4s ease; width: 0%; }
 
         .hours-chart-wrapper { background: var(--card-dark); border: 1px solid #1e2235; border-radius: 16px; padding: 20px 24px; }
         .hours-chart-wrapper h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin-bottom: 16px; }
@@ -257,8 +257,8 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .hours-bars { display: flex; align-items: flex-end; gap: 3px; width: 100%; justify-content: center; position: relative; }
         .bar { flex: 1; max-width: 20px; border-radius: 4px 4px 0 0; min-height: 2px; transition: height 0.35s ease; }
         .bar-target { background: #1e2235; border: 1px solid #2c314d; }
-        .bar-actual { background: linear-gradient(to top, #023e5a 0%, #0284a8 40%, #06b6d4 75%, #a5f3fc 100%); opacity: 1; }
-        .bar-actual.over { background: linear-gradient(to top, #042f2e 0%, #0d9488 40%, #14b8a6 75%, #99f6e4 100%); opacity: 1; }
+        .bar-actual { background: linear-gradient(to top, #023e5a 0%, #0284a8 40%, #06b6d4 75%, #a5f3fc 100%); }
+        .bar-actual.over { background: linear-gradient(to top, #042f2e 0%, #0d9488 40%, #14b8a6 75%, #99f6e4 100%); }
         .hours-bar-label { font-size: 0.68rem; color: var(--text-muted); }
         .chart-legend { display: flex; gap: 16px; margin-top: 12px; }
         .legend-item { display: flex; align-items: center; gap: 6px; font-size: 0.76rem; color: var(--text-muted); }
@@ -285,8 +285,7 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .deck-btn:hover { opacity: 0.7; }
         .deck-btn:active { transform: scale(0.92); }
         .deck-btn svg { display: block; }
-        .deck-btn.play-pause-btn { background: linear-gradient(135deg, #06b6d4, #0284a8); border-radius: 50%; width: 42px; height: 42px; padding: 0; box-shadow: none; }
-        .deck-btn.play-pause-btn:hover { opacity: 1; }
+        .deck-btn.play-pause-btn { background: linear-gradient(135deg, #06b6d4, #0284a8); border-radius: 50%; width: 42px; height: 42px; padding: 0; }
         .deck-btn.play-pause-btn.is-playing { background: linear-gradient(135deg, #a855f7, #7c3aed); }
         .volume-control-module { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.78rem; }
         .volume-slider-range { -webkit-appearance: none; width: 100px; height: 4px; background: #2c314d; border-radius: 2px; outline: none; cursor: pointer; }
@@ -323,6 +322,20 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .btn-cancel { background: #1e2235; color: var(--text-muted); }
         .btn-cancel:hover { color: white; }
 
+        /* CALENDAR COPY/PASTE */
+        .cal-clipboard-bar { display:none; align-items:center; gap:12px; background:rgba(168,85,247,0.1); border:1px solid rgba(168,85,247,0.3); border-radius:10px; padding:8px 16px; margin-bottom:12px; flex-wrap:wrap; }
+        .cal-clipboard-bar.visible { display:flex; }
+        .cal-cb-text { font-size:0.78rem; color:#c084fc; flex:1; }
+        .cal-cb-clear { background:none; border:1px solid rgba(168,85,247,0.4); color:#c084fc; border-radius:6px; padding:3px 10px; font-size:0.72rem; cursor:pointer; }
+        .cal-cb-clear:hover { background:rgba(168,85,247,0.15); }
+        .cal-day.copy-source { border-color:#a855f7 !important; box-shadow:0 0 0 1px rgba(168,85,247,0.5); }
+        .dv-copy-all-btn { width:100%; padding:9px; background:rgba(168,85,247,0.15); border:1px solid rgba(168,85,247,0.35); color:#c084fc; border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer; margin-top:6px; transition:background 0.15s; }
+        .dv-copy-all-btn:hover { background:rgba(168,85,247,0.28); }
+        .dv-paste-btn { width:100%; padding:9px; background:rgba(6,182,212,0.15); border:1px solid rgba(6,182,212,0.35); color:var(--col-thu); border-radius:8px; font-size:0.82rem; font-weight:700; cursor:pointer; margin-top:4px; transition:background 0.15s; }
+        .dv-paste-btn:hover { background:rgba(6,182,212,0.28); }
+        .cal-copy-toast { position:fixed; bottom:30px; left:50%; transform:translateX(-50%) translateY(10px); background:#a855f7; color:#fff; padding:9px 20px; border-radius:30px; font-size:0.8rem; font-weight:700; opacity:0; pointer-events:none; transition:opacity 0.3s,transform 0.3s; z-index:9999; }
+        .cal-copy-toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
         @media (max-width: 1100px) {
             header { grid-template-columns: 1fr 1fr; }
             .header-text { grid-column: 1 / -1; text-align: center; }
@@ -351,72 +364,70 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
             .deadline-unit-num { font-size: 1.5rem; }
         }
 
-/* DAY VIEWER MODAL */
-.day-viewer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center; padding: 16px; }
-.day-viewer-overlay.open { display: flex; }
-.day-viewer-modal { background: var(--card-dark); border: 1px solid #2c314d; border-radius: 20px; padding: 24px; width: 100%; max-width: 500px; max-height: 85vh; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
-.day-viewer-header { display: flex; align-items: center; justify-content: space-between; }
-.day-viewer-title { font-size: 1.1rem; font-weight: 800; color: #fff; }
-.day-viewer-subtitle { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-.day-viewer-close { background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
-.day-viewer-close:hover { color: #fff; background: #1e2235; }
-.day-viewer-stats { display: flex; gap: 8px; flex-wrap: wrap; }
-.day-viewer-stat { background: #0d0f1a; border: 1px solid #1e2235; border-radius: 8px; padding: 5px 12px; font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
-.day-viewer-stat span { font-weight: 800; font-family: monospace; color: #fff; font-size: 0.95rem; }
-.day-viewer-stat span.dv-done { color: var(--col-fri); }
-.day-viewer-stat span.dv-left { color: var(--col-thu); }
-.day-viewer-stat span.dv-pri { color: var(--col-priority); }
-.day-viewer-progress { background: #0d0f1a; border-radius: 6px; height: 6px; overflow: hidden; border: 1px solid #1a1d2e; }
-.day-viewer-progress-fill { height: 100%; border-radius: 6px; background: linear-gradient(to right, var(--col-thu), var(--col-fri)); transition: width 0.4s ease; }
-.day-viewer-list { overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 4px; }
-.day-viewer-list::-webkit-scrollbar { width: 4px; }
-.day-viewer-list::-webkit-scrollbar-thumb { background: #2c314d; border-radius: 2px; }
-.dv-task-row { background: #0d0f1a; border: 1px solid #1a1d2e; border-left: 3px solid var(--col-thu); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; transition: opacity 0.2s, border-color 0.2s; }
-.dv-task-row:hover { border-color: rgba(6,182,212,0.4); }
-.dv-task-row.is-priority { border-left-color: var(--col-priority); }
-.dv-task-row.completed { opacity: 0.35; }
-.dv-task-row.completed .dv-name { text-decoration: line-through; }
-.dv-check { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #2c314d; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; cursor: pointer; }
-.dv-task-row.completed .dv-check { background: var(--col-fri); border-color: var(--col-fri); }
-.dv-check-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; display: none; }
-.dv-task-row.completed .dv-check-dot { display: block; }
-.dv-info { flex: 1; min-width: 0; }
-.dv-name { font-size: 0.88rem; font-weight: 500; color: #fff; word-break: break-word; white-space: normal; line-height: 1.4; }
-.dv-time { font-size: 0.72rem; color: var(--col-thu); margin-top: 3px; font-weight: 600; }
-.dv-actions { display: flex; gap: 4px; flex-shrink: 0; }
-.dv-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.82rem; padding: 3px 5px; border-radius: 4px; }
-.dv-btn:hover { color: #fff; background: #1e2235; }
-.dv-empty { font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 20px 0; }
-body.light .day-viewer-modal { background: #ffffff; border-color: #e2e8f0; }
-body.light .dv-task-row, body.light .day-viewer-stat { background: #f1f5f9; border-color: #e2e8f0; }
-body.light .dv-name { color: #1a202c; }
+        /* DAY VIEWER MODAL */
+        .day-viewer-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center; padding: 16px; }
+        .day-viewer-overlay.open { display: flex; }
+        .day-viewer-modal { background: var(--card-dark); border: 1px solid #2c314d; border-radius: 20px; padding: 24px; width: 100%; max-width: 500px; max-height: 85vh; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
+        .day-viewer-header { display: flex; align-items: center; justify-content: space-between; }
+        .day-viewer-title { font-size: 1.1rem; font-weight: 800; color: #fff; }
+        .day-viewer-subtitle { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+        .day-viewer-close { background: none; border: none; color: var(--text-muted); font-size: 1.3rem; cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+        .day-viewer-close:hover { color: #fff; background: #1e2235; }
+        .day-viewer-stats { display: flex; gap: 8px; flex-wrap: wrap; }
+        .day-viewer-stat { background: #0d0f1a; border: 1px solid #1e2235; border-radius: 8px; padding: 5px 12px; font-size: 0.75rem; color: var(--text-muted); display: flex; align-items: center; gap: 5px; }
+        .day-viewer-stat span { font-weight: 800; font-family: monospace; color: #fff; font-size: 0.95rem; }
+        .day-viewer-stat span.dv-done { color: var(--col-fri); }
+        .day-viewer-stat span.dv-left { color: var(--col-thu); }
+        .day-viewer-stat span.dv-pri { color: var(--col-priority); }
+        .day-viewer-progress { background: #0d0f1a; border-radius: 6px; height: 6px; overflow: hidden; border: 1px solid #1a1d2e; }
+        .day-viewer-progress-fill { height: 100%; border-radius: 6px; background: linear-gradient(to right, var(--col-thu), var(--col-fri)); transition: width 0.4s ease; }
+        .day-viewer-list { overflow-y: auto; display: flex; flex-direction: column; gap: 8px; padding-right: 4px; }
+        .day-viewer-list::-webkit-scrollbar { width: 4px; }
+        .day-viewer-list::-webkit-scrollbar-thumb { background: #2c314d; border-radius: 2px; }
+        .dv-task-row { background: #0d0f1a; border: 1px solid #1a1d2e; border-left: 3px solid var(--col-thu); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; gap: 12px; transition: opacity 0.2s, border-color 0.2s; }
+        .dv-task-row:hover { border-color: rgba(6,182,212,0.4); }
+        .dv-task-row.is-priority { border-left-color: var(--col-priority); }
+        .dv-task-row.completed { opacity: 0.35; }
+        .dv-task-row.completed .dv-name { text-decoration: line-through; }
+        .dv-check { width: 18px; height: 18px; border-radius: 50%; border: 2px solid #2c314d; flex-shrink: 0; display: flex; align-items: center; justify-content: center; transition: background 0.15s, border-color 0.15s; cursor: pointer; }
+        .dv-task-row.completed .dv-check { background: var(--col-fri); border-color: var(--col-fri); }
+        .dv-check-dot { width: 7px; height: 7px; border-radius: 50%; background: #fff; display: none; }
+        .dv-task-row.completed .dv-check-dot { display: block; }
+        .dv-info { flex: 1; min-width: 0; }
+        .dv-name { font-size: 0.88rem; font-weight: 500; color: #fff; word-break: break-word; white-space: normal; line-height: 1.4; }
+        .dv-time { font-size: 0.72rem; color: var(--col-thu); margin-top: 3px; font-weight: 600; }
+        .dv-actions { display: flex; gap: 4px; flex-shrink: 0; }
+        .dv-btn { background: none; border: none; cursor: pointer; color: var(--text-muted); font-size: 0.82rem; padding: 3px 5px; border-radius: 4px; }
+        .dv-btn:hover { color: #fff; background: #1e2235; }
+        .dv-empty { font-size: 0.85rem; color: var(--text-muted); text-align: center; padding: 20px 0; }
 
-/* CALENDAR */
-.calendar-wrapper { background: var(--card-dark); border: 1px solid #1e2235; border-radius: 16px; padding: 20px 24px; }
-.calendar-top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
-.calendar-top-bar h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin: 0; }
-.cal-month-label { font-size: 1rem; font-weight: 700; color: #fff; min-width: 110px; text-align: center; }
-.cal-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
-.cal-nav-btn { background: #1e2235; border: 1px solid #2c314d; color: #fff; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; }
-.cal-nav-btn:hover { background: #2c314d; }
-.cal-year-input { background: #0f111a; border: 1px solid #2c314d; border-radius: 6px; color: #fff; padding: 3px 8px; font-size: 0.82rem; width: 64px; text-align: center; outline: none; }
-.cal-year-input:focus { border-color: var(--col-thu); }
-.cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; }
-.cal-header-cell { text-align: center; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 4px 0 8px; }
-.cal-day { background: #0d0f1a; border: 1px solid #1a1d2e; border-radius: 8px; padding: 7px 6px 5px; min-height: 58px; cursor: pointer; transition: border-color 0.15s, background 0.15s; position: relative; display: flex; flex-direction: column; gap: 3px; }
-.cal-day:hover { border-color: rgba(6,182,212,0.5); background: #111422; }
-.cal-day.empty { background: transparent; border-color: transparent; cursor: default; pointer-events: none; }
-.cal-day.today-cal { border-color: var(--col-thu); background: rgba(6,182,212,0.06); }
-.cal-day.has-tasks { background: #0f1322; }
-.cal-day.selected-cal { border-color: #a855f7; background: rgba(168,85,247,0.13); box-shadow: 0 0 0 1px rgba(168,85,247,0.3); }
-.cal-day-num { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); line-height: 1; }
-.cal-day.today-cal .cal-day-num { color: var(--col-thu); }
-.cal-day.selected-cal .cal-day-num { color: #c084fc; font-weight: 800; }
-.cal-dots { display: flex; gap: 2px; flex-wrap: wrap; margin-top: 2px; }
-.cal-task-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--col-thu); flex-shrink: 0; }
-.cal-task-dot.priority { background: var(--col-priority); }
-.cal-task-dot.done { background: var(--col-fri); opacity: 0.6; }
-.cal-week-label { font-size: 0.6rem; color: var(--text-muted); opacity: 0.6; margin-top: auto; text-align: right; }
+        /* CALENDAR */
+        .calendar-wrapper { background: var(--card-dark); border: 1px solid #1e2235; border-radius: 16px; padding: 20px 24px; }
+        .calendar-top-bar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; flex-wrap: wrap; gap: 10px; }
+        .calendar-top-bar h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); margin: 0; }
+        .cal-month-label { font-size: 1rem; font-weight: 700; color: #fff; min-width: 110px; text-align: center; }
+        .cal-nav { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .cal-nav-btn { background: #1e2235; border: 1px solid #2c314d; color: #fff; padding: 4px 10px; border-radius: 6px; cursor: pointer; font-size: 0.82rem; }
+        .cal-nav-btn:hover { background: #2c314d; }
+        .cal-year-input { background: #0f111a; border: 1px solid #2c314d; border-radius: 6px; color: #fff; padding: 3px 8px; font-size: 0.82rem; width: 64px; text-align: center; outline: none; }
+        .cal-year-input:focus { border-color: var(--col-thu); }
+        .cal-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 6px; }
+        .cal-header-cell { text-align: center; font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); padding: 4px 0 8px; }
+        .cal-day { background: #0d0f1a; border: 1px solid #1a1d2e; border-radius: 8px; padding: 7px 6px 5px; min-height: 58px; cursor: pointer; transition: border-color 0.15s, background 0.15s; position: relative; display: flex; flex-direction: column; gap: 3px; }
+        .cal-day:hover { border-color: rgba(6,182,212,0.5); background: #111422; }
+        .cal-day.empty { background: transparent; border-color: transparent; cursor: default; pointer-events: none; }
+        .cal-day.today-cal { border-color: var(--col-thu); background: rgba(6,182,212,0.06); }
+        .cal-day.has-tasks { background: #0f1322; }
+        .cal-day.selected-cal { border-color: #a855f7; background: rgba(168,85,247,0.13); box-shadow: 0 0 0 1px rgba(168,85,247,0.3); }
+        .cal-day.copy-source { border-color: #a855f7 !important; box-shadow: 0 0 0 2px rgba(168,85,247,0.5); }
+        .cal-day-num { font-size: 0.78rem; font-weight: 700; color: var(--text-muted); line-height: 1; }
+        .cal-day.today-cal .cal-day-num { color: var(--col-thu); }
+        .cal-day.selected-cal .cal-day-num { color: #c084fc; font-weight: 800; }
+        .cal-dots { display: flex; gap: 2px; flex-wrap: wrap; margin-top: 2px; }
+        .cal-task-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--col-thu); flex-shrink: 0; }
+        .cal-task-dot.priority { background: var(--col-priority); }
+        .cal-task-dot.done { background: var(--col-fri); opacity: 0.6; }
+        .cal-week-label { font-size: 0.6rem; color: var(--text-muted); opacity: 0.6; margin-top: auto; text-align: right; }
     </style>
 </head>
 <body>
@@ -557,6 +568,10 @@ body.light .dv-name { color: #1a202c; }
                 <input class="cal-year-input" type="number" id="calYearInput" min="2020" max="2099" value="2025" onchange="calSetYear(this.value)">
             </div>
         </div>
+        <div class="cal-clipboard-bar" id="calClipBar">
+            <span class="cal-cb-text" id="calCbText">📋 Tasks copied — click a day to paste</span>
+            <button class="cal-cb-clear" onclick="clearCalClipboard()">✕ Clear</button>
+        </div>
         <div class="cal-grid" id="calGrid"></div>
     </div>
 
@@ -660,6 +675,8 @@ body.light .dv-name { color: #1a202c; }
         </div>
         <div class="day-viewer-progress"><div class="day-viewer-progress-fill" id="dvProgressFill"></div></div>
         <div class="day-viewer-list" id="dvTaskList"></div>
+        <button class="dv-copy-all-btn" id="dvCopyAllBtn" onclick="dvCopyAllTasks()">📋 Copy All Tasks from This Day</button>
+        <button class="dv-paste-btn" id="dvPasteBtn" onclick="dvPasteTasks()" style="display:none;">📌 Paste Copied Tasks Here</button>
     </div>
 </div>
 
@@ -680,6 +697,9 @@ body.light .dv-name { color: #1a202c; }
     </div>
 </div>
 
+<!-- Toast -->
+<div class="cal-copy-toast" id="calCopyToast"></div>
+
 <audio id="audioEngine" preload="auto"></audio>
 
 <script>
@@ -688,7 +708,6 @@ const DAY_NAMES = { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday'
 const MONTHS    = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const _DOW_MAP  = ['sun','mon','tue','wed','thu','fri','sat'];
 
-/* ── STATE — year tracked ── */
 let currentYear     = new Date().getFullYear();
 let currentMonthIdx = new Date().getMonth();
 let currentWeekIdx  = 1;
@@ -699,41 +718,23 @@ let dvCurrentDay = '';
 let dvCurrentTasks = [];
 let dvFromCalendar = false;
 
-/* ════════════════════════════════════════
-   DATA MIGRATION — old tasks/goals without
-   year field get current year stamped once
-   ════════════════════════════════════════ */
-function migrateOldData() {
-    const now = new Date();
-    const yr  = now.getFullYear();
+/* ── CALENDAR COPY/PASTE STATE ── */
+let calClipboard = null;
 
-    /* tasks */
+/* ── DATA MIGRATION ── */
+function migrateOldData() {
+    const now = new Date(), yr = now.getFullYear();
     const tasks = JSON.parse(localStorage.getItem('studioTasks')) || [];
     let tChanged = false;
     const fixedTasks = tasks.map(function(t) {
-        if (t.year === undefined) {
-            tChanged = true;
-            return Object.assign({}, t, {
-                year:  yr,
-                month: t.month !== undefined ? Number(t.month) : now.getMonth(),
-                week:  t.week  !== undefined ? Number(t.week)  : 1
-            });
-        }
+        if (t.year === undefined) { tChanged = true; return Object.assign({}, t, { year: yr, month: t.month !== undefined ? Number(t.month) : now.getMonth(), week: t.week !== undefined ? Number(t.week) : 1 }); }
         return t;
     });
     if (tChanged) localStorage.setItem('studioTasks', JSON.stringify(fixedTasks));
-
-    /* goals */
     ['weekly','monthly'].forEach(function(type) {
         const goals = JSON.parse(localStorage.getItem(type)) || [];
         let gChanged = false;
-        const fixedGoals = goals.map(function(g) {
-            if (g.year === undefined) {
-                gChanged = true;
-                return Object.assign({}, g, { year: yr });
-            }
-            return g;
-        });
+        const fixedGoals = goals.map(function(g) { if (g.year === undefined) { gChanged = true; return Object.assign({}, g, { year: yr }); } return g; });
         if (gChanged) localStorage.setItem(type, JSON.stringify(fixedGoals));
     });
 }
@@ -744,7 +745,6 @@ function getCurrentWeekOfMonth() {
     return Math.ceil((now.getDate() + firstDay) / 7);
 }
 
-/* ── task match helper ── */
 function taskMatchesCurrent(t) {
     const tYr = Number(t.year);
     return t.day !== undefined
@@ -817,10 +817,8 @@ function runMainClock() {
     document.getElementById('bHourHand').style.transform = `rotate(${(h%12)*30+m*0.5}deg)`;
     document.getElementById('bMinHand').style.transform  = `rotate(${m*6}deg)`;
     h = h % 12 || 12;
-    document.getElementById('bigTimeDisplay').innerHTML =
-        `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}<span>${ampm}</span>`;
-    document.getElementById('bigDateDisplay').innerText =
-        now.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+    document.getElementById('bigTimeDisplay').innerHTML = `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}<span>${ampm}</span>`;
+    document.getElementById('bigDateDisplay').innerText = now.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
 }
 
 /* ── TIMER ── */
@@ -850,12 +848,9 @@ function refreshCountdownUI() {
     document.getElementById('cntDisplay').innerText=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
 }
 function setTimerBtnState(running) {
-    const btn=document.getElementById('timerTrigger');
-    document.getElementById('timerIcon').innerHTML = running
-    ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline-block;vertical-align:middle;"><rect x="4" y="3" width="5" height="18" rx="1.5" fill="black"/><rect x="15" y="3" width="5" height="18" rx="1.5" fill="black"/></svg>'
-    : '&#9654;';
+    document.getElementById('timerIcon').innerHTML = running ? '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" style="display:inline-block;vertical-align:middle;"><rect x="4" y="3" width="5" height="18" rx="1.5" fill="black"/><rect x="15" y="3" width="5" height="18" rx="1.5" fill="black"/></svg>' : '&#9654;';
     document.getElementById('timerLabel').innerText = running ? 'PAUSE' : 'START';
-    running ? btn.classList.add('is-paused') : btn.classList.remove('is-paused');
+    running ? document.getElementById('timerTrigger').classList.add('is-paused') : document.getElementById('timerTrigger').classList.remove('is-paused');
 }
 function toggleCountdown() {
     if (audioCtx.state==='suspended') audioCtx.resume();
@@ -901,18 +896,12 @@ function tickDeadline() {
     const daysEl=document.getElementById('ddDays'), hoursEl=document.getElementById('ddHours');
     const minsEl=document.getElementById('ddMins'), secsEl=document.getElementById('ddSecs');
     const btnEl=document.querySelector('.deadline-edit-btn');
-    if (!saved || !saved.date) {
-        nameEl.innerText='Set your target'; subEl.innerText='No deadline set';
-        daysEl.innerText=hoursEl.innerText=minsEl.innerText=secsEl.innerText='--'; return;
-    }
+    if (!saved || !saved.date) { nameEl.innerText='Set your target'; subEl.innerText='No deadline set'; daysEl.innerText=hoursEl.innerText=minsEl.innerText=secsEl.innerText='--'; return; }
     const target=new Date(saved.date), now=new Date(), diff=target-now;
     nameEl.innerText=saved.name;
     subEl.innerText=target.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'});
     btnEl.innerText='Edit Target';
-    if (diff<=0) {
-        daysEl.innerText=hoursEl.innerText=minsEl.innerText=secsEl.innerText='00';
-        [daysEl,hoursEl,minsEl,secsEl].forEach(el=>el.classList.add('urgent')); return;
-    }
+    if (diff<=0) { daysEl.innerText=hoursEl.innerText=minsEl.innerText=secsEl.innerText='00'; [daysEl,hoursEl,minsEl,secsEl].forEach(el=>el.classList.add('urgent')); return; }
     const totalSecs=Math.floor(diff/1000), days=Math.floor(totalSecs/86400), hours=Math.floor((totalSecs%86400)/3600);
     const mins=Math.floor((totalSecs%3600)/60), secs=totalSecs%60, isUrgent=days<3;
     daysEl.innerText=String(days).padStart(2,'0'); hoursEl.innerText=String(hours).padStart(2,'0');
@@ -921,7 +910,7 @@ function tickDeadline() {
 }
 document.getElementById('deadlineModalOverlay').addEventListener('click',function(e){if(e.target===this)closeDeadlineModal();});
 
-/* ── MONTH/WEEK NAV — year wraps correctly ── */
+/* ── MONTH/WEEK NAV ── */
 function reloadAllTasks() {
     DAYS.forEach(d=>{ renderDayTasks(d); calcProgress(d); });
     renderTodaySummary(); renderCalendar();
@@ -944,8 +933,7 @@ function changeWeek(dir) {
 /* ── GOALS ── */
 function addGoal(type) {
     const inp=document.getElementById(type+'GoalInput'); if (!inp.value.trim()) return;
-    const g={ id:Date.now(), text:inp.value.trim(), completed:false,
-              week:currentWeekIdx, month:currentMonthIdx, year:currentYear };
+    const g={ id:Date.now(), text:inp.value.trim(), completed:false, week:currentWeekIdx, month:currentMonthIdx, year:currentYear };
     let goals=JSON.parse(localStorage.getItem(type))||[]; goals.push(g);
     localStorage.setItem(type,JSON.stringify(goals)); renderGoalRow(g,type); inp.value='';
 }
@@ -967,14 +955,8 @@ function loadGoals(type) {
     const all=JSON.parse(localStorage.getItem(type))||[];
     all.filter(function(g) {
         const yr = Number(g.year);
-        if (type==='weekly') {
-            return Number(g.week)===currentWeekIdx
-                && Number(g.month)===currentMonthIdx
-                && (isNaN(yr) || yr===currentYear);
-        } else {
-            return Number(g.month)===currentMonthIdx
-                && (isNaN(yr) || yr===currentYear);
-        }
+        if (type==='weekly') return Number(g.week)===currentWeekIdx && Number(g.month)===currentMonthIdx && (isNaN(yr)||yr===currentYear);
+        else return Number(g.month)===currentMonthIdx && (isNaN(yr)||yr===currentYear);
     }).forEach(function(g){ renderGoalRow(g,type); });
 }
 
@@ -1010,16 +992,9 @@ function renderHoursChart() {
         const tH=tMins>0?Math.round((tMins/maxMins)*100):0, aH=aMins>0?Math.round((aMins/maxMins)*100):0;
         const isOver=aMins>=tMins&&tMins>0;
         const aLabel=aMins>0?(Math.floor(aMins/60)+'h'+(aMins%60>0?(aMins%60)+'m':'')):'';
-        const labelHtml = aLabel
-            ? '<div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:0.62rem;font-weight:700;color:'+(isOver?'#5eead4':'#67e8f9')+';white-space:nowrap;pointer-events:none;letter-spacing:0.2px;">'+aLabel+'</div>'
-            : '';
+        const labelHtml=aLabel?'<div style="position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-size:0.62rem;font-weight:700;color:'+(isOver?'#5eead4':'#67e8f9')+';white-space:nowrap;pointer-events:none;">'+aLabel+'</div>':'';
         const g=document.createElement('div'); g.className='hours-bar-group';
-        g.innerHTML='<div class="hours-bars">'
-            +labelHtml
-            +'<div class="bar bar-target" style="height:'+tH+'px"></div>'
-            +'<div class="bar bar-actual'+(isOver?' over':'')+'" style="height:'+aH+'px"></div>'
-            +'</div>'
-            +'<div class="hours-bar-label">'+DAY_NAMES[day].slice(0,3)+'</div>';
+        g.innerHTML='<div class="hours-bars">'+labelHtml+'<div class="bar bar-target" style="height:'+tH+'px"></div><div class="bar bar-actual'+(isOver?' over':'')+'" style="height:'+aH+'px"></div></div><div class="hours-bar-label">'+DAY_NAMES[day].slice(0,3)+'</div>';
         container.appendChild(g);
     });
 }
@@ -1053,15 +1028,13 @@ function renderCalendar() {
         const weekNum=getWeekOfMonth(calYear,calMonth,d);
         const dayTasks=allTasks.filter(function(t){
             const yr=Number(t.year);
-            return t.day===dayKey
-                && Number(t.month)===calMonth
-                && Number(t.week)===weekNum
-                && (isNaN(yr)||yr===calYear);
+            return t.day===dayKey && Number(t.month)===calMonth && Number(t.week)===weekNum && (isNaN(yr)||yr===calYear);
         });
         const isToday=(calYear===today.getFullYear()&&calMonth===today.getMonth()&&d===today.getDate());
         const isSelected=calSelectedDate&&calSelectedDate.d===d&&calSelectedDate.month===calMonth&&calSelectedDate.year===calYear;
+        const isCopySrc=calClipboard&&calClipboard.sourceDay===dayKey&&calClipboard.sourceWeek===weekNum&&calClipboard.sourceMonth===calMonth&&calClipboard.sourceYear===calYear;
         const cell=document.createElement('div');
-        cell.className='cal-day'+(isToday?' today-cal':'')+(isSelected?' selected-cal':'')+(dayTasks.length>0?' has-tasks':'');
+        cell.className='cal-day'+(isToday?' today-cal':'')+(isSelected?' selected-cal':'')+(dayTasks.length>0?' has-tasks':'')+(isCopySrc?' copy-source':'');
         const numEl=document.createElement('div');numEl.className='cal-day-num';numEl.innerText=d;cell.appendChild(numEl);
         if(dayTasks.length>0){
             const dotsWrap=document.createElement('div');dotsWrap.className='cal-dots';
@@ -1114,6 +1087,17 @@ function renderDayViewerList(all,day,weekNum){
     document.getElementById('dvPri').innerText=priority; document.getElementById('dvTotal').innerText=total;
     document.getElementById('dvProgressFill').style.width=pct+'%';
     const list=document.getElementById('dvTaskList'); list.innerHTML='';
+
+    /* paste button visibility */
+    const _pb=document.getElementById('dvPasteBtn');
+    if(_pb){
+        const _same=calClipboard&&calClipboard.sourceDay===day&&
+            calClipboard.sourceWeek===weekNum&&
+            calClipboard.sourceMonth===(dvFromCalendar?calMonth:currentMonthIdx)&&
+            calClipboard.sourceYear===(dvFromCalendar?calYear:currentYear);
+        _pb.style.display=(calClipboard&&!_same)?'block':'none';
+    }
+
     if(total===0){list.innerHTML='<div class="dv-empty">No tasks for this day.</div>';return;}
     all.forEach(function(t){
         const row=document.createElement('div');
@@ -1141,6 +1125,63 @@ function dvDel(id){
 }
 function dvEdit(id){closeDayViewer();openEditModal(id);}
 document.getElementById('dayViewerOverlay').addEventListener('click',function(e){if(e.target===this)closeDayViewer();});
+
+/* ── CALENDAR COPY / PASTE ── */
+function dvCopyAllTasks() {
+    const all=(JSON.parse(localStorage.getItem('studioTasks'))||[]).filter(function(t){
+        return dvFromCalendar
+            ? dvCurrentTasks.some(function(x){return x.id===t.id;})
+            : t.day===dvCurrentDay && taskMatchesCurrent(t);
+    });
+    if(!all.length){showCalToast('No tasks to copy!');return;}
+    calClipboard={
+        tasks:all,
+        sourceLabel:document.getElementById('dvTitle').innerText,
+        sourceDay:dvCurrentDay,
+        sourceWeek:dvFromCalendar?(calSelectedDate?calSelectedDate.weekNum:currentWeekIdx):currentWeekIdx,
+        sourceMonth:dvFromCalendar?calMonth:currentMonthIdx,
+        sourceYear:dvFromCalendar?calYear:currentYear
+    };
+    document.getElementById('calCbText').innerText='📋 '+all.length+' task(s) from '+calClipboard.sourceLabel+' — click a day to paste';
+    document.getElementById('calClipBar').classList.add('visible');
+    renderCalendar();
+    showCalToast('✓ '+all.length+' task(s) copied!');
+    closeDayViewer();
+}
+function dvPasteTasks() {
+    if(!calClipboard)return;
+    const tgt=dvFromCalendar&&calSelectedDate
+        ?{day:calSelectedDate.dayKey,week:calSelectedDate.weekNum,month:calMonth,year:calYear}
+        :{day:dvCurrentDay,week:currentWeekIdx,month:currentMonthIdx,year:currentYear};
+    let existing=JSON.parse(localStorage.getItem('studioTasks'))||[];
+    let added=0;
+    calClipboard.tasks.forEach(function(src){
+        const dupe=existing.some(function(e){
+            return e.name===src.name&&e.day===tgt.day&&Number(e.week)===tgt.week&&Number(e.month)===tgt.month&&Number(e.year)===tgt.year;
+        });
+        if(!dupe){
+            existing.push({id:Date.now()+Math.floor(Math.random()*9999),name:src.name,time:src.time,
+                isPriority:src.isPriority,completed:false,day:tgt.day,week:tgt.week,month:tgt.month,year:tgt.year});
+            added++;
+        }
+    });
+    localStorage.setItem('studioTasks',JSON.stringify(existing));
+    DAYS.forEach(function(d){renderDayTasks(d);calcProgress(d);});
+    renderTodaySummary();renderCalendar();
+    const skipped=calClipboard.tasks.length-added;
+    showCalToast('📌 '+added+' pasted'+(skipped>0?' ('+skipped+' duplicate'+(skipped>1?'s':'')+' skipped)':''));
+    closeDayViewer();
+}
+function clearCalClipboard(){
+    calClipboard=null;
+    document.getElementById('calClipBar').classList.remove('visible');
+    renderCalendar();
+}
+function showCalToast(msg){
+    const t=document.getElementById('calCopyToast');
+    t.innerText=msg;t.classList.add('show');
+    setTimeout(function(){t.classList.remove('show');},2800);
+}
 
 /* ── TODAY SUMMARY ── */
 function getTodayKey(){return _DOW_MAP[new Date().getDay()];}
@@ -1197,9 +1238,7 @@ function renderTaskRow(t){
 }
 function clearDayTasks(day){
     if(!confirm('Clear all tasks for '+DAY_NAMES[day]+'?'))return;
-    let tsk=(JSON.parse(localStorage.getItem('studioTasks'))||[]).filter(function(t){
-        return !(t.day===day && taskMatchesCurrent(t));
-    });
+    let tsk=(JSON.parse(localStorage.getItem('studioTasks'))||[]).filter(function(t){return !(t.day===day && taskMatchesCurrent(t));});
     localStorage.setItem('studioTasks',JSON.stringify(tsk));
     renderDayTasks(day);calcProgress(day);renderTodaySummary();renderCalendar();
 }
@@ -1212,9 +1251,7 @@ function delTask(id,day){
     localStorage.setItem('studioTasks',JSON.stringify(tsk));renderDayTasks(day);calcProgress(day);renderTodaySummary();renderCalendar();
 }
 function calcProgress(day){
-    const filtered=(JSON.parse(localStorage.getItem('studioTasks'))||[]).filter(function(t){
-        return t.day===day && taskMatchesCurrent(t);
-    });
+    const filtered=(JSON.parse(localStorage.getItem('studioTasks'))||[]).filter(function(t){return t.day===day && taskMatchesCurrent(t);});
     const pct=filtered.length?Math.round((filtered.filter(function(t){return t.completed;}).length/filtered.length)*100):0;
     const el=document.getElementById('svg-'+day),tx=document.getElementById('p-'+day);
     if(el)el.style.strokeDashoffset=87.96-(pct/100)*87.96;
@@ -1243,6 +1280,18 @@ function saveEditTask(){
     if(day){renderDayTasks(day);calcProgress(day);renderTodaySummary();renderCalendar();}
 }
 document.getElementById('editModalOverlay').addEventListener('click',function(e){if(e.target===this)closeEditModal();});
+
+/* ── TASK FORM ── */
+document.getElementById('taskForm').onsubmit=function(e){
+    e.preventDefault();
+    const t={id:Date.now(),name:document.getElementById('taskName').value,day:document.getElementById('taskDay').value,
+        time:document.getElementById('taskTime').value,completed:false,isPriority:document.getElementById('taskPriority').checked,
+        week:currentWeekIdx,month:currentMonthIdx,year:currentYear};
+    let tsk=JSON.parse(localStorage.getItem('studioTasks'))||[]; tsk.push(t);
+    localStorage.setItem('studioTasks',JSON.stringify(tsk));
+    renderDayTasks(t.day);calcProgress(t.day);renderTodaySummary();renderCalendar();
+    document.getElementById('taskName').value='';document.getElementById('taskTime').value='';document.getElementById('taskPriority').checked=false;
+};
 
 /* ── AUDIO ── */
 let originalMusicDatabase=[],activePlaylist=[],currentTrackPointer=0,selectedAISortMode='all',activeSearchQuery='';
@@ -1290,33 +1339,13 @@ function updatePlayProgress(){
 }
 function seekTrack(e){const a=document.getElementById('audioEngine');if(a.duration)a.currentTime=(e.offsetX/document.getElementById('scrubContainer').clientWidth)*a.duration;}
 
-/* ── TASK FORM ── */
-document.getElementById('taskForm').onsubmit=function(e){
-    e.preventDefault();
-    const t={
-        id:Date.now(),
-        name:document.getElementById('taskName').value,
-        day:document.getElementById('taskDay').value,
-        time:document.getElementById('taskTime').value,
-        completed:false,
-        isPriority:document.getElementById('taskPriority').checked,
-        week:currentWeekIdx,
-        month:currentMonthIdx,
-        year:currentYear
-    };
-    let tsk=JSON.parse(localStorage.getItem('studioTasks'))||[]; tsk.push(t);
-    localStorage.setItem('studioTasks',JSON.stringify(tsk));
-    renderDayTasks(t.day);calcProgress(t.day);renderTodaySummary();renderCalendar();
-    document.getElementById('taskName').value='';document.getElementById('taskTime').value='';document.getElementById('taskPriority').checked=false;
-};
-
 /* ── THEME ── */
 function toggleTheme(){
     const isLight=document.body.classList.toggle('light');
-    localStorage.setItem('theme',isLight?'light':'dark'); updateThemeBtn(isLight);
+    localStorage.setItem('theme',isLight?'light':'dark');updateThemeBtn(isLight);
 }
 function updateThemeBtn(isLight){
-    document.getElementById('themeLabel').innerText=isLight?'Dark':'Light';
+    document.getElementById('themeLabel').innerText=isLight?'Dark Mode':'Light Mode';
     document.getElementById('themeIcon').innerHTML=isLight
         ?'<circle cx="12" cy="12" r="5" fill="currentColor"/><line x1="12" y1="1" x2="12" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'
         :'<path d="M21 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.79 9.79z" fill="currentColor"/>';
@@ -1324,17 +1353,15 @@ function updateThemeBtn(isLight){
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded',function(){
-    /* 1. migrate old data first — year field add */
     migrateOldData();
-
     const _savedTheme=localStorage.getItem('theme');
     if(_savedTheme==='light'){document.body.classList.add('light');updateThemeBtn(true);}
 
-    currentYear     = new Date().getFullYear();
-    currentMonthIdx = new Date().getMonth();
-    currentWeekIdx  = getCurrentWeekOfMonth();
-    document.getElementById('weekDisplay').innerText  = 'Week '+currentWeekIdx;
-    document.getElementById('monthDisplay').innerText = MONTHS[currentMonthIdx];
+    currentYear=new Date().getFullYear();
+    currentMonthIdx=new Date().getMonth();
+    currentWeekIdx=getCurrentWeekOfMonth();
+    document.getElementById('weekDisplay').innerText='Week '+currentWeekIdx;
+    document.getElementById('monthDisplay').innerText=MONTHS[currentMonthIdx];
 
     buildWeeklyGrid();
     setInterval(runMainClock,1000); runMainClock();
@@ -1359,10 +1386,10 @@ document.addEventListener('DOMContentLoaded',function(){
         renderDayTasks(d);calcProgress(d);updateHoursRing(d);
     });
 
-    renderHoursChart(); renderTodaySummary();
+    renderHoursChart();renderTodaySummary();
     const todayCol=document.getElementById('col-'+getTodayKey());
     if(todayCol)todayCol.classList.add('today');
-    loadGoals('monthly'); loadGoals('weekly');
+    loadGoals('monthly');loadGoals('weekly');
 
     document.getElementById('weeklyGoalInput').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addGoal('weekly');}});
     document.getElementById('monthlyGoalInput').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addGoal('monthly');}});
