@@ -29,10 +29,10 @@ body.light {
 body.light .big-clock-container, body.light .custom-timer-panel, body.light .panel-card,
 body.light .deadline-banner, body.light .today-summary, body.light .hours-chart-wrapper,
 body.light .audio-module-wrapper, body.light .day-column, body.light .edit-modal,
-body.light .deadline-modal, body.light .copy-modal { background: #ffffff; border-color: #e2e8f0; }
+body.light .deadline-modal { background: #ffffff; border-color: #e2e8f0; }
 body.light .form-group input, body.light .form-group select, body.light .goal-input-box input,
 body.light .hours-input, body.light .music-search-bar, body.light .edit-modal input,
-body.light .deadline-modal input, body.light .copy-modal select { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
+body.light .deadline-modal input { background: #f8fafc; border-color: #cbd5e1; color: #1a202c; }
 body.light .task-item, body.light .goal-item, body.light .studio-track-row,
 body.light .today-task-card, body.light .deadline-unit, body.light .today-stat,
 body.light .hours-block, body.light .playback-engine-deck { background: #f1f5f9; border-color: #e2e8f0; }
@@ -323,26 +323,6 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
         .btn-cancel { background: #1e2235; color: var(--text-muted); }
         .btn-cancel:hover { color: white; }
 
-        /* ── COPY MODAL ── */
-        .copy-modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 3000; align-items: center; justify-content: center; padding: 16px; }
-        .copy-modal-overlay.open { display: flex; }
-        .copy-modal { background: var(--card-dark); border: 1px solid #2c314d; border-radius: 16px; padding: 24px; width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 16px; }
-        .copy-modal h3 { font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-        .copy-modal-task-preview { background: #0d0f1a; border: 1px solid #1e2235; border-radius: 8px; padding: 10px 14px; }
-        .copy-modal-task-name { font-size: 0.9rem; font-weight: 600; color: #fff; }
-        .copy-modal-task-meta { font-size: 0.72rem; color: var(--text-muted); margin-top: 3px; }
-        .copy-modal-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .copy-modal-field label { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-muted); margin-bottom: 5px; }
-        .copy-modal-field select { width: 100%; padding: 8px 10px; background: #0f111a; border: 1px solid #2c314d; border-radius: 6px; color: white; outline: none; font-size: 0.85rem; cursor: pointer; }
-        .copy-modal-field select:focus { border-color: var(--col-wed); }
-        .copy-modal-actions { display: flex; gap: 10px; margin-top: 4px; }
-        .copy-modal-actions button { flex: 1; padding: 10px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; font-size: 0.85rem; transition: opacity 0.15s; }
-        .copy-modal-actions button:hover { opacity: 0.85; }
-        .btn-copy-confirm { background: linear-gradient(135deg, var(--col-wed), var(--col-mon)); color: white; }
-        .copy-success-toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(20px); background: #14b8a6; color: #000; padding: 10px 22px; border-radius: 30px; font-size: 0.82rem; font-weight: 700; opacity: 0; pointer-events: none; transition: opacity 0.3s, transform 0.3s; z-index: 9999; }
-        .copy-success-toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-        body.light .copy-modal-task-preview { background: #f1f5f9; }
-
         @media (max-width: 1100px) {
             header { grid-template-columns: 1fr 1fr; }
             .header-text { grid-column: 1 / -1; text-align: center; }
@@ -361,7 +341,6 @@ body.light .theme-toggle:hover { border-color: var(--col-thu); color: #1a202c; }
             .deadline-units { justify-content: flex-start; }
             .audio-controls-filter-group { flex-direction: column; align-items: stretch; }
             .music-search-bar { width: 100%; }
-            .copy-modal-fields { grid-template-columns: 1fr; }
         }
         @media (max-width: 480px) {
             body { padding: 10px; }
@@ -701,63 +680,6 @@ body.light .dv-name { color: #1a202c; }
     </div>
 </div>
 
-<!-- Copy Task Modal -->
-<div class="copy-modal-overlay" id="copyModalOverlay">
-    <div class="copy-modal">
-        <h3>📋 Copy Task To...</h3>
-        <div class="copy-modal-task-preview">
-            <div class="copy-modal-task-name" id="copyTaskPreviewName">Task Name</div>
-            <div class="copy-modal-task-meta" id="copyTaskPreviewMeta">Time · Day</div>
-        </div>
-        <div class="copy-modal-fields">
-            <div class="copy-modal-field">
-                <label>Target Day</label>
-                <select id="copyTargetDay">
-                    <option value="mon">Monday</option>
-                    <option value="tue">Tuesday</option>
-                    <option value="wed">Wednesday</option>
-                    <option value="thu">Thursday</option>
-                    <option value="fri">Friday</option>
-                    <option value="sat">Saturday</option>
-                    <option value="sun">Sunday</option>
-                </select>
-            </div>
-            <div class="copy-modal-field">
-                <label>Target Week</label>
-                <select id="copyTargetWeek">
-                    <option value="1">Week 1</option>
-                    <option value="2">Week 2</option>
-                    <option value="3">Week 3</option>
-                    <option value="4">Week 4</option>
-                    <option value="5">Week 5</option>
-                </select>
-            </div>
-            <div class="copy-modal-field">
-                <label>Target Month</label>
-                <select id="copyTargetMonth">
-                    <option value="0">January</option><option value="1">February</option>
-                    <option value="2">March</option><option value="3">April</option>
-                    <option value="4">May</option><option value="5">June</option>
-                    <option value="6">July</option><option value="7">August</option>
-                    <option value="8">September</option><option value="9">October</option>
-                    <option value="10">November</option><option value="11">December</option>
-                </select>
-            </div>
-            <div class="copy-modal-field">
-                <label>Target Year</label>
-                <select id="copyTargetYear"></select>
-            </div>
-        </div>
-        <div class="copy-modal-actions">
-            <button class="btn-cancel" onclick="closeCopyModal()">Cancel</button>
-            <button class="btn-copy-confirm" onclick="confirmCopyTask()">📋 Copy Task</button>
-        </div>
-    </div>
-</div>
-
-<!-- Toast -->
-<div class="copy-success-toast" id="copyToast">✓ Task copied successfully!</div>
-
 <audio id="audioEngine" preload="auto"></audio>
 
 <script>
@@ -766,7 +688,7 @@ const DAY_NAMES = { mon:'Monday', tue:'Tuesday', wed:'Wednesday', thu:'Thursday'
 const MONTHS    = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 const _DOW_MAP  = ['sun','mon','tue','wed','thu','fri','sat'];
 
-/* ── STATE ── */
+/* ── STATE — year tracked ── */
 let currentYear     = new Date().getFullYear();
 let currentMonthIdx = new Date().getMonth();
 let currentWeekIdx  = 1;
@@ -777,15 +699,15 @@ let dvCurrentDay = '';
 let dvCurrentTasks = [];
 let dvFromCalendar = false;
 
-/* ── COPY STATE ── */
-let copyingTaskId = null;
-
-/* ════════════════════════════════════
-   DATA MIGRATION
-   ════════════════════════════════════ */
+/* ════════════════════════════════════════
+   DATA MIGRATION — old tasks/goals without
+   year field get current year stamped once
+   ════════════════════════════════════════ */
 function migrateOldData() {
     const now = new Date();
     const yr  = now.getFullYear();
+
+    /* tasks */
     const tasks = JSON.parse(localStorage.getItem('studioTasks')) || [];
     let tChanged = false;
     const fixedTasks = tasks.map(function(t) {
@@ -801,6 +723,7 @@ function migrateOldData() {
     });
     if (tChanged) localStorage.setItem('studioTasks', JSON.stringify(fixedTasks));
 
+    /* goals */
     ['weekly','monthly'].forEach(function(type) {
         const goals = JSON.parse(localStorage.getItem(type)) || [];
         let gChanged = false;
@@ -821,6 +744,7 @@ function getCurrentWeekOfMonth() {
     return Math.ceil((now.getDate() + firstDay) / 7);
 }
 
+/* ── task match helper ── */
 function taskMatchesCurrent(t) {
     const tYr = Number(t.year);
     return t.day !== undefined
@@ -997,7 +921,7 @@ function tickDeadline() {
 }
 document.getElementById('deadlineModalOverlay').addEventListener('click',function(e){if(e.target===this)closeDeadlineModal();});
 
-/* ── MONTH/WEEK NAV ── */
+/* ── MONTH/WEEK NAV — year wraps correctly ── */
 function reloadAllTasks() {
     DAYS.forEach(d=>{ renderDayTasks(d); calcProgress(d); });
     renderTodaySummary(); renderCalendar();
@@ -1194,13 +1118,7 @@ function renderDayViewerList(all,day,weekNum){
     all.forEach(function(t){
         const row=document.createElement('div');
         row.className='dv-task-row '+(t.isPriority?'is-priority ':'')+( t.completed?'completed':'');
-        row.innerHTML='<div class="dv-check" onclick="dvCheck('+t.id+')"><div class="dv-check-dot"></div></div>'
-            +'<div class="dv-info"><div class="dv-name">'+t.name+'</div><div class="dv-time">'+(t.time||'--')+'</div></div>'
-            +'<div class="dv-actions">'
-            +'<button class="dv-btn" title="Copy task" onclick="openCopyModal('+t.id+')">📋</button>'
-            +'<button class="dv-btn" onclick="dvEdit('+t.id+')">&#9998;</button>'
-            +'<button class="dv-btn" onclick="dvDel('+t.id+')" style="color:#ef444466;">&#x2715;</button>'
-            +'</div>';
+        row.innerHTML='<div class="dv-check" onclick="dvCheck('+t.id+')"><div class="dv-check-dot"></div></div><div class="dv-info"><div class="dv-name">'+t.name+'</div><div class="dv-time">'+(t.time||'--')+'</div></div><div class="dv-actions"><button class="dv-btn" onclick="dvEdit('+t.id+')">&#9998;</button><button class="dv-btn" onclick="dvDel('+t.id+')" style="color:#ef444466;">&#x2715;</button></div>';
         list.appendChild(row);
     });
 }
@@ -1273,15 +1191,8 @@ function renderDayTasks(day){
     }).sort(function(a,b){return parseTimeMinutes(a.time)-parseTimeMinutes(b.time);}).forEach(renderTaskRow);
 }
 function renderTaskRow(t){
-    const li=document.createElement('li');
-    li.className='task-item '+(t.isPriority?'is-priority ':'')+( t.completed?'completed':'');
-    li.innerHTML='<div style="flex:1;min-width:0;"><div class="task-title">'+t.name+'</div><div class="task-time">'+(t.time||'--')+'</div></div>'
-        +'<div class="task-actions">'
-        +'<button class="action-btn" title="Copy task" onclick="openCopyModal('+t.id+')">📋</button>'
-        +'<button class="action-btn" onclick="openEditModal('+t.id+')">&#9998;</button>'
-        +'<button class="action-btn" onclick="chkTask('+t.id+',\''+t.day+'\')">&#10003;</button>'
-        +'<button class="action-btn" onclick="delTask('+t.id+',\''+t.day+'\')">&#x2715;</button>'
-        +'</div>';
+    const li=document.createElement('li'); li.className='task-item '+(t.isPriority?'is-priority ':'')+( t.completed?'completed':'');
+    li.innerHTML='<div style="flex:1;min-width:0;"><div class="task-title">'+t.name+'</div><div class="task-time">'+(t.time||'--')+'</div></div><div class="task-actions"><button class="action-btn" onclick="openEditModal('+t.id+')">&#9998;</button><button class="action-btn" onclick="chkTask('+t.id+',\''+t.day+'\')">&#10003;</button><button class="action-btn" onclick="delTask('+t.id+',\''+t.day+'\')">&#x2715;</button></div>';
     document.getElementById('l-'+t.day).appendChild(li);
 }
 function clearDayTasks(day){
@@ -1333,118 +1244,6 @@ function saveEditTask(){
 }
 document.getElementById('editModalOverlay').addEventListener('click',function(e){if(e.target===this)closeEditModal();});
 
-/* ════════════════════════════════════
-   COPY TASK MODAL
-   ════════════════════════════════════ */
-function populateCopyYearSelect() {
-    const sel = document.getElementById('copyTargetYear');
-    sel.innerHTML = '';
-    const nowY = new Date().getFullYear();
-    for (let y = nowY - 1; y <= nowY + 3; y++) {
-        const opt = document.createElement('option');
-        opt.value = y;
-        opt.innerText = y;
-        if (y === currentYear) opt.selected = true;
-        sel.appendChild(opt);
-    }
-}
-
-function openCopyModal(id) {
-    const t = (JSON.parse(localStorage.getItem('studioTasks')) || []).find(function(x){ return x.id === id; });
-    if (!t) return;
-    copyingTaskId = id;
-
-    /* preview */
-    document.getElementById('copyTaskPreviewName').innerText = t.name;
-    document.getElementById('copyTaskPreviewMeta').innerText =
-        (t.time || '--') + ' · ' + DAY_NAMES[t.day] + ' · Week ' + t.week + ' · ' + MONTHS[Number(t.month)] + ' ' + t.year;
-
-    /* defaults: same day/week, current month+year */
-    document.getElementById('copyTargetDay').value   = t.day;
-    document.getElementById('copyTargetWeek').value  = currentWeekIdx;
-    document.getElementById('copyTargetMonth').value = currentMonthIdx;
-    populateCopyYearSelect();
-
-    document.getElementById('copyModalOverlay').classList.add('open');
-}
-
-function closeCopyModal() {
-    copyingTaskId = null;
-    document.getElementById('copyModalOverlay').classList.remove('open');
-}
-
-function confirmCopyTask() {
-    if (!copyingTaskId) return;
-    const src = (JSON.parse(localStorage.getItem('studioTasks')) || []).find(function(x){ return x.id === copyingTaskId; });
-    if (!src) { closeCopyModal(); return; }
-
-    const targetDay   = document.getElementById('copyTargetDay').value;
-    const targetWeek  = parseInt(document.getElementById('copyTargetWeek').value);
-    const targetMonth = parseInt(document.getElementById('copyTargetMonth').value);
-    const targetYear  = parseInt(document.getElementById('copyTargetYear').value);
-
-    const newTask = {
-        id:         Date.now() + Math.floor(Math.random() * 1000),
-        name:       src.name,
-        day:        targetDay,
-        time:       src.time,
-        completed:  false,
-        isPriority: src.isPriority,
-        week:       targetWeek,
-        month:      targetMonth,
-        year:       targetYear
-    };
-
-    let tasks = JSON.parse(localStorage.getItem('studioTasks')) || [];
-    tasks.push(newTask);
-    localStorage.setItem('studioTasks', JSON.stringify(tasks));
-
-    closeCopyModal();
-
-    /* refresh if copied into current view */
-    if (targetYear === currentYear && targetMonth === currentMonthIdx && targetWeek === currentWeekIdx) {
-        renderDayTasks(targetDay);
-        calcProgress(targetDay);
-        renderTodaySummary();
-        renderCalendar();
-    } else {
-        renderCalendar();
-    }
-
-    showCopyToast(src.name, targetDay, targetWeek, targetMonth, targetYear);
-}
-
-function showCopyToast(name, day, week, month, year) {
-    const toast = document.getElementById('copyToast');
-    toast.innerText = '✓ "' + name + '" copied to ' + DAY_NAMES[day] + ', Week ' + week + ' · ' + MONTHS[month] + ' ' + year;
-    toast.classList.add('show');
-    setTimeout(function(){ toast.classList.remove('show'); }, 3000);
-}
-
-document.getElementById('copyModalOverlay').addEventListener('click', function(e){
-    if (e.target === this) closeCopyModal();
-});
-
-/* ── TASK FORM ── */
-document.getElementById('taskForm').onsubmit=function(e){
-    e.preventDefault();
-    const t={
-        id:Date.now(),
-        name:document.getElementById('taskName').value,
-        day:document.getElementById('taskDay').value,
-        time:document.getElementById('taskTime').value,
-        completed:false,
-        isPriority:document.getElementById('taskPriority').checked,
-        week:currentWeekIdx,
-        month:currentMonthIdx,
-        year:currentYear
-    };
-    let tsk=JSON.parse(localStorage.getItem('studioTasks'))||[]; tsk.push(t);
-    localStorage.setItem('studioTasks',JSON.stringify(tsk));
-    renderDayTasks(t.day);calcProgress(t.day);renderTodaySummary();renderCalendar();
-    document.getElementById('taskName').value='';document.getElementById('taskTime').value='';document.getElementById('taskPriority').checked=false;
-};
-
 /* ── AUDIO ── */
 let originalMusicDatabase=[],activePlaylist=[],currentTrackPointer=0,selectedAISortMode='all',activeSearchQuery='';
 function setPlayPauseIcon(playing){
@@ -1491,6 +1290,26 @@ function updatePlayProgress(){
 }
 function seekTrack(e){const a=document.getElementById('audioEngine');if(a.duration)a.currentTime=(e.offsetX/document.getElementById('scrubContainer').clientWidth)*a.duration;}
 
+/* ── TASK FORM ── */
+document.getElementById('taskForm').onsubmit=function(e){
+    e.preventDefault();
+    const t={
+        id:Date.now(),
+        name:document.getElementById('taskName').value,
+        day:document.getElementById('taskDay').value,
+        time:document.getElementById('taskTime').value,
+        completed:false,
+        isPriority:document.getElementById('taskPriority').checked,
+        week:currentWeekIdx,
+        month:currentMonthIdx,
+        year:currentYear
+    };
+    let tsk=JSON.parse(localStorage.getItem('studioTasks'))||[]; tsk.push(t);
+    localStorage.setItem('studioTasks',JSON.stringify(tsk));
+    renderDayTasks(t.day);calcProgress(t.day);renderTodaySummary();renderCalendar();
+    document.getElementById('taskName').value='';document.getElementById('taskTime').value='';document.getElementById('taskPriority').checked=false;
+};
+
 /* ── THEME ── */
 function toggleTheme(){
     const isLight=document.body.classList.toggle('light');
@@ -1505,6 +1324,7 @@ function updateThemeBtn(isLight){
 
 /* ── INIT ── */
 document.addEventListener('DOMContentLoaded',function(){
+    /* 1. migrate old data first — year field add */
     migrateOldData();
 
     const _savedTheme=localStorage.getItem('theme');
