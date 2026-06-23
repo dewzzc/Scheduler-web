@@ -1,4 +1,4 @@
-const CACHE = 'workspace-schedule-v6';
+const CACHE = 'workspace-schedule-v7';
 const FILES = [
   './index.html',
   './manifest.json',
