@@ -436,7 +436,94 @@
         .cal-task-dot.priority { background: var(--col-priority); }
         .cal-task-dot.done { background: var(--col-fri); opacity: 0.6; }
         .cal-week-label { font-size: 0.6rem; color: var(--text-muted); opacity: 0.6; margin-top: auto; text-align: right; }
-    </style>
+.fab-print-btn {
+  position: fixed; bottom: 30px; right: 30px; z-index: 8000;
+  width: 54px; height: 54px; border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.08);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: none;
+  transition: background 0.25s ease, border-color 0.25s ease,
+              box-shadow 0.25s ease, transform 0.2s ease;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+.fab-print-btn svg path {
+  stroke: rgba(255,255,255,0.18);
+  transition: stroke 0.25s ease;
+}
+.fab-print-btn:hover {
+  background: linear-gradient(135deg, #06b6d4, #0284a8);
+  border-color: transparent;
+  box-shadow: 0 6px 28px rgba(6,182,212,0.55);
+  transform: scale(1.1);
+}
+.fab-print-btn:hover svg path {
+  stroke: white;
+}
+body.light .fab-print-btn {
+  border-color: rgba(0,0,0,0.1);
+}
+body.light .fab-print-btn svg path {
+  stroke: rgba(0,0,0,0.18);
+}
+body.light .fab-print-btn:hover {
+  background: linear-gradient(135deg, #06b6d4, #0284a8);
+  border-color: transparent;
+}
+body.light .fab-print-btn:hover svg path {
+  stroke: white;
+}
+.fab-print-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(6,182,212,0.6); }
+.print-popup-overlay { display: none; position: fixed; inset: 0; z-index: 7999; }
+.print-popup-overlay.open { display: block; }
+.print-popup-menu {
+  position: fixed; bottom: 96px; right: 30px; z-index: 8001;
+  background: var(--card-dark); border: 1px solid #2c314d;
+  border-radius: 16px; padding: 10px; min-width: 210px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.55);
+  flex-direction: column; gap: 6px;
+  display: flex;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(14px) scale(0.97);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+.print-popup-menu.open {
+  pointer-events: all;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.print-popup-menu.open { display: flex; opacity: 1; transform: translateY(0); }
+.print-popup-title {
+  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1px;
+  color: var(--text-muted); padding: 4px 8px 6px;
+  border-bottom: 1px solid #1e2235; margin-bottom: 2px;
+}
+.print-popup-item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 10px 14px; border-radius: 10px;
+  background: transparent; border: none; color: var(--text-light);
+  font-size: 0.88rem; font-weight: 600; cursor: pointer;
+  text-align: left; width: 100%; transition: background 0.15s;
+}
+.print-popup-item:hover { background: #1e2235; }
+.ppi-icon {
+  width: 32px; height: 32px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+.ppi-day  { background: rgba(6,182,212,0.15); }
+.ppi-week { background: rgba(168,85,247,0.15); }
+.ppi-month{ background: rgba(20,184,166,0.15); }
+.ppi-sub  { font-size: 0.68rem; color: var(--text-muted); font-weight: 400; margin-top: 1px; }
+body.light .print-popup-menu { background: #ffffff; border-color: #e2e8f0; }
+body.light .print-popup-item:hover { background: #f1f5f9; }
+body.light .print-popup-item { color: #1a202c; }
+body.light .print-popup-title { border-color: #e2e8f0; }
+
+</style>
 </head>
 <body>
 <div class="page-wrap">
@@ -473,6 +560,33 @@
                 </button>
                 <button class="timer-btn timer-btn-reset" onclick="resetCountdown()">&#8635; Reset</button>
             </div>
+
+	<!-- Floating Print Button -->
+<button class="fab-print-btn" id="fabPrintBtn" onclick="togglePrintMenu(event)" title="Print Options">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+    <path d="M6 9V2h12v7" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M6 14h12v8H6z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</button>
+
+<div class="print-popup-overlay" id="printPopupOverlay" onclick="closePrintMenu()"></div>
+
+<div class="print-popup-menu" id="printPopupMenu">
+  <div class="print-popup-title">Print Options</div>
+  <button class="print-popup-item" onclick="printMenuAction('day')">
+    <div class="ppi-icon ppi-day">📅</div>
+    <div><div>Print Today</div><div class="ppi-sub">Today's tasks only</div></div>
+  </button>
+  <button class="print-popup-item" onclick="printMenuAction('week')">
+    <div class="ppi-icon ppi-week">📆</div>
+    <div><div>Print This Week</div><div class="ppi-sub">Current week schedule</div></div>
+  </button>
+  <button class="print-popup-item" onclick="printMenuAction('month')">
+    <div class="ppi-icon ppi-month">🗓️</div>
+    <div><div>Print This Month</div><div class="ppi-sub">Full month overview</div></div>
+  </button>
+</div>
         </div>
     </header>
 
@@ -1515,6 +1629,143 @@ document.addEventListener('DOMContentLoaded',function(){
     document.getElementById('weeklyGoalInput').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addGoal('weekly');}});
     document.getElementById('monthlyGoalInput').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();addGoal('monthly');}});
 });
+
+/* ── PRINT ── */
+function printView(mode) {
+  const all = JSON.parse(localStorage.getItem('studioTasks')) || [];
+  const now = new Date();
+  const todayKey = getTodayKey();
+
+  let tasks = [], title = '';
+
+  if (mode === 'day') {
+    title = 'Today\'s Tasks — ' + now.toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+    tasks = all.filter(function(t){
+      return t.day === todayKey && taskMatchesCurrent(t);
+    }).sort(function(a,b){ return parseTimeMinutes(a.time)-parseTimeMinutes(b.time); });
+  }
+
+  if (mode === 'week') {
+    title = 'Weekly Schedule — Week ' + currentWeekIdx + ', ' + MONTHS[currentMonthIdx] + ' ' + currentYear;
+    tasks = all.filter(function(t){
+      return taskMatchesCurrent(t);
+    }).sort(function(a,b){
+      const dOrder = DAYS.indexOf(a.day) - DAYS.indexOf(b.day);
+      return dOrder !== 0 ? dOrder : parseTimeMinutes(a.time) - parseTimeMinutes(b.time);
+    });
+  }
+
+  if (mode === 'month') {
+    title = 'Monthly Schedule — ' + MONTHS[currentMonthIdx] + ' ' + currentYear;
+    tasks = all.filter(function(t){
+      const yr = Number(t.year);
+      return Number(t.month) === currentMonthIdx && (isNaN(yr) || yr === currentYear);
+    }).sort(function(a,b){
+      const wDiff = (Number(a.week)||1) - (Number(b.week)||1);
+      if (wDiff !== 0) return wDiff;
+      const dOrder = DAYS.indexOf(a.day) - DAYS.indexOf(b.day);
+      return dOrder !== 0 ? dOrder : parseTimeMinutes(a.time) - parseTimeMinutes(b.time);
+    });
+  }
+
+  /* Build print HTML */
+  let rows = '';
+  let lastGroup = '';
+
+  tasks.forEach(function(t){
+    let group = '';
+    if (mode === 'week') group = DAY_NAMES[t.day] || t.day;
+    if (mode === 'month') group = 'Week ' + (t.week||'?') + ' — ' + (DAY_NAMES[t.day]||t.day);
+
+    if (group && group !== lastGroup) {
+      rows += '<tr class="group-row"><td colspan="4">' + group + '</td></tr>';
+      lastGroup = group;
+    }
+
+    rows += '<tr class="' + (t.completed?'done-row':'') + (t.isPriority?' pri-row':'') + '">'
+      + '<td class="status-cell">' + (t.completed ? '✅' : (t.isPriority ? '🔴' : '⬜')) + '</td>'
+      + '<td class="name-cell">' + (t.name||'') + '</td>'
+      + '<td>' + (t.time||'—') + '</td>'
+      + '<td>' + (t.completed ? 'Done' : (t.isPriority ? 'Priority' : 'Pending')) + '</td>'
+      + '</tr>';
+  });
+
+  if (!rows) rows = '<tr><td colspan="4" style="text-align:center;padding:20px;color:#999;">No tasks found.</td></tr>';
+
+  /* Stats */
+  const done = tasks.filter(function(t){return t.completed;}).length;
+  const left = tasks.filter(function(t){return !t.completed;}).length;
+  const pri  = tasks.filter(function(t){return t.isPriority && !t.completed;}).length;
+
+  const printWin = window.open('','_blank','width=900,height=700');
+  printWin.document.write(`<!DOCTYPE html><html><head><meta charset="UTF-8">
+  <title>${title}</title>
+  <style>
+    body { font-family: 'Segoe UI', system-ui, sans-serif; margin: 0; padding: 32px; color: #111; background: #fff; }
+    h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; color: #1a202c; }
+    .subtitle { font-size: 0.82rem; color: #64748b; margin-bottom: 18px; }
+    .stats { display: flex; gap: 16px; margin-bottom: 22px; flex-wrap: wrap; }
+    .stat { border: 1px solid #e2e8f0; border-radius: 8px; padding: 8px 18px; font-size: 0.82rem; color: #64748b; }
+    .stat b { font-size: 1.1rem; color: #0f172a; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    th { background: #f8fafc; border-bottom: 2px solid #e2e8f0; padding: 9px 10px; text-align: left; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+    td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+    tr:hover td { background: #fafafa; }
+    .group-row td { background: #f1f5f9; font-weight: 800; font-size: 0.82rem; color: #475569; padding: 7px 10px; letter-spacing: 0.5px; text-transform: uppercase; }
+    .done-row td { color: #94a3b8; }
+    .done-row .name-cell { text-decoration: line-through; }
+    .pri-row td { color: #dc2626; }
+    .status-cell { font-size: 1rem; width: 32px; }
+    .name-cell { font-weight: 600; }
+    @media print {
+      body { padding: 16px; }
+      .no-print { display: none; }
+    }
+  </style>
+  </head><body>
+  <h1>${title}</h1>
+  <div class="subtitle">Generated: ${now.toLocaleString()}</div>
+  <div class="stats">
+    <div class="stat">Total <b>${tasks.length}</b></div>
+    <div class="stat">Done <b style="color:#16a34a">${done}</b></div>
+    <div class="stat">Remaining <b style="color:#0284c7">${left}</b></div>
+    <div class="stat">Priority <b style="color:#dc2626">${pri}</b></div>
+  </div>
+  <table>
+    <thead><tr><th></th><th>Task</th><th>Time</th><th>Status</th></tr></thead>
+    <tbody>${rows}</tbody>
+  </table>
+  <br>
+  <div class="no-print" style="display:flex;gap:10px;margin-top:20px;">
+    <button onclick="window.print()" style="padding:10px 28px;background:#0f172a;color:#fff;border:none;border-radius:8px;font-size:0.9rem;font-weight:700;cursor:pointer;">🖨️ Print / Save as PDF</button>
+    <button onclick="window.close()" style="padding:10px 18px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;border-radius:8px;font-size:0.9rem;cursor:pointer;">Close</button>
+  </div>
+  </body></html>`);
+  printWin.document.close();
+  printWin.focus();
+}
+
+/* FLOATING PRINT MENU */
+function togglePrintMenu(e) {
+  e.stopPropagation();
+  var menu    = document.getElementById('printPopupMenu');
+  var overlay = document.getElementById('printPopupOverlay');
+  if (menu.classList.contains('open')) {
+    closePrintMenu();
+  } else {
+    menu.classList.add('open');
+    overlay.classList.add('open');
+  }
+}
+function closePrintMenu() {
+  document.getElementById('printPopupMenu').classList.remove('open');
+  document.getElementById('printPopupOverlay').classList.remove('open');
+}
+function printMenuAction(mode) {
+  closePrintMenu();
+  printView(mode);
+}
+
 </script>
 </body>
 </html>
